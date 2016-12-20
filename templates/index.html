@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+<html>
+<head>
+    <title>Encryption App</title>
+</head>
+<body ng-app="{% block ng_app %}{% endblock %}">
+
+	{% block js %}
+	    <script src="{% static "lib/angular/angular.min.js" %}"></script>
+	    <script src="{% static "lib/angular-resource/angular-resource.min.js" %}"></script>
+	    <script src="{% static "lib/angular-ui-router/release/angular-ui-router.min.js" %}"></script>
+	    <script src="{% static "js/app.js" %}"></script>
+	{% endblock %}
+</body>
+</html>
