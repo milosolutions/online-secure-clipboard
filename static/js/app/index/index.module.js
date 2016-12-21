@@ -1,1 +1,3 @@
-angular.module('index', []);
+angular.module('index', [
+    'core.paste'
+]);

@@ -2,10 +2,10 @@ angular.
     module('index').
     component('index', {
         templateUrl: '/static/js/app/index/index.template.html',
-        controller: function () {
+        controller: function (Paste, $state) {
             var text = $('#text'),
                 password = $('#password'),
-                expire = $('#expire'),
+                expiry = $('#expiry'),
                 encrypted = $('#encrypted'),
                 originalText,
                 encryptedObj;
@@ -26,7 +26,26 @@ angular.
 
             $('form').on('submit', function (e) {
                 e.preventDefault();
-                console.log({'text': encryptedText.toString(), 'expire': expire.val()})
+                var paste = new Paste();
+                paste.text = encrypted.val();
+                paste.expiry = expiry.val();
+                Paste.save(paste, function (data) {
+                    $state.go('detail', {'id': data.id})
+                }, function (error) {
+                    $.each(error.data, function (field, errors) {
+                        var $field = $('#' + field),
+                            $parent = $field.parent(),
+                            errorMessages = '';
+
+                        $parent.addClass('has-error');
+
+                        $.each(errors, function () {
+                            errorMessages += '<li>' + this + '</li>';
+                        });
+                        $parent.append('<ul>' + errorMessages + '</ul>');
+
+                    })
+                })
             })
 
         }
