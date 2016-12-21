@@ -3,14 +3,33 @@
 <html>
 <head>
     <title>Encryption App</title>
+    <link rel="stylesheet" href="{% static 'lib/bootstrap/dist/css/bootstrap.min.css' %}"/>
 </head>
-<body ng-app="{% block ng_app %}{% endblock %}">
+<body ng-app="encryptionApp">
 
-	{% block js %}
-	    <script src="{% static "lib/angular/angular.min.js" %}"></script>
-	    <script src="{% static "lib/angular-resource/angular-resource.min.js" %}"></script>
-	    <script src="{% static "lib/angular-ui-router/release/angular-ui-router.min.js" %}"></script>
-	    <script src="{% static "js/app.js" %}"></script>
-	{% endblock %}
+	<ui-view></ui-view>
+
+    <script src="{% static "lib/jquery/dist/jquery.min.js" %}"></script>
+    <script src="{% static "lib/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "lib/angular/angular.min.js" %}"></script>
+    <script src="{% static "lib/angular-resource/angular-resource.min.js" %}"></script>
+    <script src="{% static "lib/angular-ui-router/release/angular-ui-router.min.js" %}"></script>
+    <script src="{% static "lib/cryptojslib/components/core.js" %}"></script>
+    <script src="{% static "lib/cryptojslib/components/enc-base64.js" %}"></script>
+    <script src="{% static "lib/cryptojslib/components/md5.js" %}"></script>
+    <script src="{% static "lib/cryptojslib/components/evpkdf.js" %}"></script>
+    <script src="{% static "lib/cryptojslib/components/cipher-core.js" %}"></script>
+    <script src="{% static "lib/cryptojslib/components/aes.js" %}"></script>
+    <script src="{% static "lib/cryptojslib/rollups/hmac-sha256.js" %}"></script>
+    <script src="{% static "js/encryptJsonFormatter.js" %}"></script>
+    <script src="{% static "js/app/app.module.js" %}"></script>
+    <script src="{% static "js/app/app.config.js" %}"></script>
+    <script src="{% static "js/app/core/core.module.js" %}"></script>
+    <script src="{% static "js/app/core/paste/paste.module.js" %}"></script>
+    <script src="{% static "js/app/core/paste/paste.service.js" %}"></script>
+    <script src="{% static "js/app/detail/detail.module.js" %}"></script>
+    <script src="{% static "js/app/detail/detail.component.js" %}"></script>
+    <script src="{% static "js/app/index/index.module.js" %}"></script>
+    <script src="{% static "js/app/index/index.component.js" %}"></script>
 </body>
 </html>
