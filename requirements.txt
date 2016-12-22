@@ -1,2 +1,4 @@
 django==1.9.12
 djangorestframework==3.5.3
+celery==4.0.2
+django-celery-beat==1.0.1
