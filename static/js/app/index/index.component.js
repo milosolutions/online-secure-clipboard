@@ -24,11 +24,42 @@ angular.
                     text.val(originalText);
             });
 
+            function getDate(daysDelta) {
+                var today = new Date();
+                if (daysDelta) {
+                    today.setDate(today.getDate() + daysDelta)
+                }
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+
+                var yyyy = today.getFullYear();
+                if (dd < 10) {
+                    dd = '0' + dd;
+                }
+                if (mm < 10) {
+                    mm = '0' + mm;
+                }
+                return yyyy + '-' + mm + '-' + dd;
+            }
+
+            function expiryChange() {
+                var expiryDate = getDate(parseInt(this.value) + 1);
+                $('b.expiration').text(expiryDate + ' 00:01')
+            }
+
+            expiry.on('change', expiryChange);
+
+            // trigger change event in order to display default expiry date help text
+            expiry.change();
+
             $('form').on('submit', function (e) {
                 e.preventDefault();
+
                 var paste = new Paste();
                 paste.text = encrypted.val();
                 paste.expiry = expiry.val();
+                paste.created_date = getDate();
+
                 Paste.save(paste, function (data) {
                     $state.go('detail', {'id': data.id})
                 }, function (error) {
