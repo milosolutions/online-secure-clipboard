@@ -70,3 +70,5 @@ static/lib
 #vagrant
 .vagrant
 up.sh
+
+local_settings.py
