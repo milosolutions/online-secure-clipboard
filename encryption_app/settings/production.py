@@ -3,7 +3,9 @@ from __future__ import absolute_import, unicode_literals
 
 from .common import *
 
-environ.Env.read_env("{}{}".format(BASE_DIR, '/.env'))
+ROOT_DIR = environ.Path(__file__) - 3
+environ.Env.read_env("{}{}".format(ROOT_DIR, '/.env'))
+env = environ.Env()
 
 DEBUG = env.bool('DJANGO_DEBUG')
 
@@ -19,6 +21,10 @@ ADMINS = tuple([tuple(admins.split(':')) for admins in env.list('DJANGO_ADMINS')
 DATABASES = {
     'default': env.db('DJANGO_DATABASE_URL')
 }
+
+# CELERY
+
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 
 
 # LOGGING CONFIGURATION
