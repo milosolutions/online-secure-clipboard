@@ -7,7 +7,7 @@ from celery import Celery
 from celery.schedules import crontab
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'encryption_app.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'encryption_app.settings.production')
 
 app = Celery('encryption_app')
 

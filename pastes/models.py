@@ -24,7 +24,6 @@ class EncryptedPaste(models.Model):
 
     expiry_date = models.DateField(editable=False)
 
-
     def generate_id(self):
         return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(16))
 
