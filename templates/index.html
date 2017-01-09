@@ -4,10 +4,36 @@
 <head>
     <title>Encryption App</title>
     <link rel="stylesheet" href="{% static 'lib/bootstrap/dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
 </head>
 <body ng-app="encryptionApp">
+	<nav class="navbar navbar-default">
+	    <div class="container">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	            <a class="navbar-brand" href="https://milosolutions.com/en/"><img
+	                src="{% static 'imgs/logo-white_big.png' %}"></a>
+	        </div>
+	        <div class="navbar-right">
+	            <div class="app-title">
+	                encryption<span>app</span>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- /.container -->
+	</nav>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <img class="img-lock center-block" src="{% static 'imgs/unlocked.png' %}"
+	                 alt="Icon made by Madebyoliver from www.flaticon.com">
+	        </div>
+            <ui-view></ui-view>
+	    </div>
 
-	<ui-view></ui-view>
+	</div>
+
+
 
     <script src="{% static "lib/jquery/dist/jquery.min.js" %}"></script>
     <script src="{% static "lib/bootstrap/dist/js/bootstrap.min.js" %}"></script>

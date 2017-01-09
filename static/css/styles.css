@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+body {
+  font-family: "Open Sans", sans-serif; }
+
+.btn.btn-primary {
+  border: 1px solid #DD6526;
+  background: #DD6526;
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  border-radius: 4px;
+  line-height: 20px;
+  padding: 10px 15px;
+  margin: 5px;
+  text-transform: uppercase;
+  transition: background .3s; }
+  .btn.btn-primary:hover {
+    background: #b4501c; }
+
+::selection {
+  background: #f8aa2e;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  background: #f8aa2e;
+  /* Gecko Browsers */ }
+
+.navbar {
+  background: #0f0f0f;
+  height: 100px; }
+  .navbar .navbar-header .navbar-brand {
+    height: 100px;
+    transition: opacity .3s; }
+    .navbar .navbar-header .navbar-brand img {
+      height: 100%;
+      width: auto; }
+    .navbar .navbar-header .navbar-brand:hover {
+      opacity: .7; }
+  .navbar .app-title {
+    color: white;
+    line-height: 100px;
+    font-size: 24px;
+    font-weight: 700; }
+    .navbar .app-title span {
+      font-weight: 300; }
+
+.form-group .control-label {
+  font-weight: 300; }
+.form-group .form-control {
+  border-radius: 0;
+  box-shadow: none !important;
+  transition: border-color .3s; }
+  .form-group .form-control:focus {
+    border-color: #DD6526; }
+.form-group .help-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #9b9b9b; }
+
+.img-lock {
+  height: 80px;
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: 15px; }
