@@ -57,6 +57,10 @@ body {
   margin-top: 5px;
   font-size: 12px;
   color: #9b9b9b; }
+.form-group select.form-control {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
 
 .img-lock {
   height: 80px;
